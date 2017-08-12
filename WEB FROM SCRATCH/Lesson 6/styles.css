@@ -1,0 +1,20 @@
+/* Custom CSS */
+
+body{
+  background: #4d2d06;
+  font-family: georgia, times, serif;
+  colors: #fff;
+  text-align: center;
+  font-size: 50px;
+}
+
+#monkey{
+  background: #fff;
+  color: #4d2d06;
+  font-family: Verdana, Arial, sans-serif;;
+}
+
+#donkey{
+  background: green;
+  font-family: monaco, monospace;
+}
