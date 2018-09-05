@@ -1,0 +1,63 @@
+/*
+
+===========
+Vincent Tran
+September 4 2018
+*/
+/* CSS for Site 1 */
+*{
+  margin:0;
+  padding:0;
+  font-weight:normal;
+  font-size:16px;
+}
+
+body{
+  padding:50px;
+  font-family: times, georgia;
+  color:inherit;
+}
+.navbar{
+  background-color: black;
+  font-family: Arial,Helvetica,sans-serif;
+}
+.navbar a{
+  float:inline-start;
+  font-size: 16 px;
+  color:white;
+  padding: 20px 20px;
+}
+.dropdown{
+  float:inline-start;
+  overflow:hidden; /*hides behind */
+}
+.dropdown .dropbutton{
+  cursor:pointer;
+  font-size: 16px;
+  color:white;
+  padding:20px 20px;
+}
+.dropdown-content {
+  display:none;
+  background-color: gray;
+  min-width:200 px;
+}
+.dropdown-content .a{
+  color:black;
+  padding:20px 20px;
+  display:list-item; /*makes dropdown*/
+
+}
+.dropdown-content a:hover{
+  background-color: white;
+}
+.show{
+  display:list-item;
+}
+h1,h2,h3,h4{
+  margin:10px 0;
+  font-family:Arial,Helvetica, sans-serif;
+  font-weight:bold;
+  /* bolder, lighter, normal (100,200,300,400), bold (500,600,700),
+   heavy (800,900 *not supported for all) */
+}
