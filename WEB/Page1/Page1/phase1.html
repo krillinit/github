@@ -1,0 +1,92 @@
+
+<!--
+===========
+Vincent Tran
+September 7 2018
+HTML  for Site 1
+===========
+ -->
+<html>
+  <head>
+    <title>CIS 3110</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body id="bod">
+
+    <header><!--#8-->
+          <h1>Vincent's Boring Page</h1>
+      <em>A page by Vincent Tran</em>
+      <nav>
+        <p> CIS 3110</p>
+        <ul>
+        <li>  <a href="#home">Home</a>  </li>
+        <li> <a href="#links">Site Directory</a> <!--#1-->
+              <ul>
+                <li><a href="https://s3.us-east-2.amazonaws.com/thefirstphase1/the+first+try.html">1: Christian's Site</a> </li><!--put your sites here-->
+                <li><a href="https://s3-us-west-2.amazonaws.com/cis3110fall/p1.html">2: Kyle's Site</a> </li>
+                <li><a href="https://s3-us-west-2.amazonaws.com/3110/Phase+1+Assignment/Phase1.html">3: Ahmed's Site </a> </li>
+                <li><a href="https://s3.us-east-2.amazonaws.com/phase1assignment/asdf.html">4: Steven's Site</a> </li>
+                <li><a href="https://s3-us-west-2.amazonaws.com/vtranbucket3110/phase1/phase1.html">5: Vincent's Site</a> </li>
+                </ul>
+          </li>
+        </ul>
+
+      </nav>
+    </header>
+    <section>
+      <h3>Site Directory</h3>
+      <p>
+         </p>
+      Please type in a number associated with the page you'd like to go to.
+      <br></br> <!--#2-->
+    Type in the page number:&emsp;<input type="number" id="num" min="1" max="5">
+    <br></br>
+    Type in the your name:&emsp; <input type="text" id="text">
+    <br></br>
+    <button type="button"id="save" onclick="buttonPrint(); return false;"> Print </button>
+    </section><!-- #3 -->
+    <article id=output>
+<div>
+ <p> Your link will appear below. </p>
+</div>
+  </article>
+  <script type="text/javascript">
+  function buttonPrint() {
+  var l = document.getElementById("num").value; //should be of type number, numeric datatype
+      console.log("var numIn is a type of " + typeof l);
+         wrapitup(l);
+
+       } //end params, now use them below
+     function wrapitup(x) {
+       var output=x;
+         var dynamicDiv = document.createElement("div");     //Create a new dynamic div
+         var newp = document.createElement("p");             //compose a p to put in the div
+         var newPMessage = "The number you have selected is:  " +  output ; //what's your message?
+         var nodeToPaint = document.createTextNode(newPMessage);//encode in a text node, for printings
+         newp.appendChild(nodeToPaint);//put the new text element in the new paragraph
+         dynamicDiv.appendChild(newp);//append the paragraph to the new div
+         dynamicDiv.setAttribute("id", x); //should prove that I can set the id of a new html element, via js
+         var element = document.getElementById("output");//attach the div to the body
+         element.appendChild(dynamicDiv);
+         createLink(x);
+     }
+     function createLink(numInTheLink) { //makes a hyperlink inside the new div
+
+       var a = document.createElement('a');
+       var personsName = document.getElementById("text").value; //get the link's title to use your name
+       var msg = "Go here now, " + personsName;
+       a.title = msg;
+       var l = "Okay, " + personsName + ". Click here to return to page #" + numInTheLink;
+       var linkText = document.createTextNode(l);
+       a.appendChild(linkText); //apply the message to the anchor link
+       if (numInTheLink ==1 ){       a.href="https://s3.us-east-2.amazonaws.com/thefirstphase1/the+first+try.html";}
+       else if(numInTheLink == 2) {a.href="https://s3-us-west-2.amazonaws.com/cis3110fall/p1.html";}
+       else if(numInTheLink == 3) {a.href="https://s3-us-west-2.amazonaws.com/3110/Phase+1+Assignment/Phase1.html";}
+       else if(numInTheLink == 4) {a.href="https://s3.us-east-2.amazonaws.com/phase1assignment/asdf.html";}
+      else{a.href="https://s3-us-west-2.amazonaws.com/vtranbucket3110/phase1/phase1.html";}
+      var element2= document.getElementById("output");
+     element2.appendChild(a); //now put the link on the page
+     }
+  </script>
+  </body>
+</html>

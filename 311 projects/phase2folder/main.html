@@ -1,0 +1,83 @@
+<html lang="en">
+
+
+<head>
+  <link rel="stylesheet" href="go.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+< <body>
+  <header><!--#8-->
+
+      <nav class="navbar-nav navbar-expand-md navbar-light bg-black sticky-top">
+        <button class="navbar-toggler" data-toggle="collapse"  data-target="#collapse_target">
+          <span class ="navbar-toggler-icon"><span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse_target">
+      <span class="navbar-text"> CIS 3110</span>
+
+      <ul class="navbar-nav">
+      <li  class="nav-item">  <a class="nav-link" href="https://s3-us-west-2.amazonaws.com/vtranbucket3110/phase2/main.html">Home</a>  </li>
+      <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target">  Site Directory<span class="caret"></span></a> <!--#1-->
+      <div class="dropdown-menu" aria-labelledby="dropdown_target">
+        <a  class="dropdown-item" href="https://s3-us-west-2.amazonaws.com/vtranbucket3110/phase1/phase1.html">Phase 1</a>
+        <div class="dropdown-divider"> </div>
+          <a class="dropdown-item" href="https://s3-us-west-2.amazonaws.com/vtranbucket3110/phase2/main.html">Phase 2</a>
+            </div>
+        </li>
+      </ul>
+    </div>
+    </nav>
+  </header>
+    <div class="jumbotron">
+                <h1 class="text-center"> <strong>Photo Gallery</strong> </h1>
+                <h2 class="text-center">A bunch of pictures <em>for CIS 3110</em> </h2>
+                <p class="text-center"> Click on main picture to view details, click on images below to navigate. <p>
+        <div class="main-img">
+        <img src="https://preview.ibb.co/gxVppG/img1.jpg" id="current" onclick="currentClick">
+      </div>
+      <div id="imgs" class ="imgs">
+      </div>
+           <p class="text-center">Created by Vincent Tran</p>
+            </div>
+<script>
+var images = ["http://a3.espncdn.com/combiner/i?img=%2Fmedia%2Fmotion%2F2017%2F0129%2Fdm_170129_NBA_ENHL_OTD_Magic_Johnson_returns_in_1996%2Fdm_170129_NBA_ENHL_OTD_Magic_Johnson_returns_in_1996.jpg",
+		"https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-s3.si.com%2Fs3fs-public%2F2018%2F07%2F10%2Fjerry-west-main-marquee.jpg&w=800&q=85",
+		"https://i.ytimg.com/vi/OTL8dW6PqPE/maxresdefault.jpg",
+		"http://images.performgroup.com/di/library/omnisport/82/3/onealshaq-831-getty-us-ftr_142utk4v0ric01itvwxde099fn.jpg?t=-2067250265",
+		"https://images.alphacoders.com/776/776026.jpg",
+            "http://a.espncdn.com/combiner/i?img=%2Fmedia%2Fmotion%2F2016%2F0820%2Fdm_160820_On_this_date_Happy_birthday_Wilt_Chamberlain%2Fdm_160820_On_this_date_Happy_birthday_Wilt_Chamberlain.jpg",
+            "https://fadeawayworld.com/wp-content/uploads/2017/06/Elgin-Baylor-Los-Angeles-Lakers.jpeg?x92973",
+            "http://sportige.com/wp-content/uploads/2013/03/Gail-Goodrich.jpg",
+            "https://www.nba.com/lakers/sites/lakers/files/styles/story_main_photo/public/180829-jw.jpg?itok=xSSLknoN",
+            "http://valdostatoday.com/wp-content/uploads/2015/06/wilkes-e1433594294245.jpg",
+          "http://a3.espncdn.com/combiner/i?img=%2Fmedia%2Fmotion%2F2017%2F0129%2Fdm_170129_NBA_ENHL_OTD_Magic_Johnson_returns_in_1996%2Fdm_170129_NBA_ENHL_OTD_Magic_Johnson_returns_in_1996.jpg"];
+var titles=["Magic Johnson", "Jerry West", "Kareem Abdul-Jabbar", "Shaquille O'Neal", "Kobe Bean Bryant", "Wilt Chamberlain", "Elgin Baylor", "Gail Goodrich", "James Worthy", "Jamaal Wilkes"];
+var descriptions=["Lance blows in Lebron's ear.", "Swaggy P", "This is crying Jordan", "Jr why????", "why pass?", "how many kids do I got?"];
+console.log(images);
+var url;
+var cur = document.getElementById('current');
+cur.src= images [0];
+for(i=1; i <images.length; i++){
+urlOfDet = "detailPage.html?" + url+"&title=" +titles[i]+ "&description="+descriptions[i];
+  var imgDestination = document.getElementById("imgs");
+    var imgAdded = document.createElement("img");
+    imgAdded.src = images[i];
+  imgAdded.onclick = imgClick;
+
+    imgDestination.appendChild(imgAdded);
+}
+function imgClick(e) {
+  var current=document.getElementById('current');
+  current.src = e.target.src;
+}
+function currentClick(){
+//clicks current button to create lightbox
+var imageIndex= (images.indexOf("current.src"));
+
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
